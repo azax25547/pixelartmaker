@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,68 @@
     <title>Pixel Art Maker</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-            <h1>
-                PIXEL ART MAKER
-            </h1>
-            <hr>
-        </header>
-    <section>
+        <h1>
+            PIXEL ART MAKER
+        </h1>
+        <hr>
+    </header>
+    <section style="text-align: center;">
+
         <div class="form-group">
-                Number of rows: &nbsp;&nbsp; <input type="number" name="num1" id="num1" max=45 min=0>&nbsp;&nbsp;
-                Number of columns:&nbsp;&nbsp; <input type="number" name="num2" id="num2" max=35 min=0>&nbsp;&nbsp;
-                Choose your color:&nbsp;&nbsp;
-                <input type="color" id="color-picker" >
+            <label for="num1">Number of rows:</label> &nbsp;&nbsp; <input type="number" name="num1" id="num1" max=45
+                min=0>&nbsp;&nbsp;
+            <label for="num2">Number of columns:</label>&nbsp;&nbsp; <input type="number" name="num2" id="num2" max=35
+                min=0>&nbsp;&nbsp;
+            Choose your color:&nbsp;&nbsp;
+            <input type="color" id="color-picker">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="tooltip-container">
+                <span class="help-icon">?</span>
+                <div class="tooltip-content">
+                    <ul>
+                        <li>Select the no of rows and cloumns of Container you want.</li>
+                        <li>You can pick any color at any time.</li>
+                        <li>You can change the container size according to yourself.</li>
+                        <li>You can click and hover over the containers to draw.</li>
+                        <li>To remove any paint you can right click on the cell to remove.</li>
+                        <li>You can export your paint as an image and download it.</li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="slider-container">
+            <label for="valueSlider">Select the container size: </label>
+            <input type="range" id="valueSlider" min="0" max="100" value="50">
+            <span id="sliderValue">50</span>
         </div>
     </section>
-    <br>
     <div class="buttons">
         <center>
-                <button id="get-grid" >Get grid</button>
-                <button id="clr-grid" >Clear grid</button>        
+            <button id="get-grid">Get grid</button>
+            <button id="clr-grid">Clear grid</button>
         </center>
-            </div>
+    </div>
     <center>
-    <div id="output"></div>
+        <p>
+            <button id="export-button" style="display: none;">Export as Image</button>
+        </p>
+
+        <div id="output"></div>
+
     </center>
-    
-   
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <script src="app.js"></script>
+
 </body>
+
 </html>
